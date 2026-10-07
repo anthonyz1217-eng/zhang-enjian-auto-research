@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="张恩健"><meta name="description" content="**共同Z-score可以把指标改写成相对参照集合的标准差单位，但不会自动消除门店规模、预算或运营机会差异。** 对同一个指标，所有门店共用同一均值和正标准差时，原数较高的门店，Z-score仍然较高。想比较绝对贡献、单位机会产出或经模型调整后的表现，需要分别定义对象；“已经标准化”不能代替公平性解释。"><title>汽车门店新媒体评分：Z-score标准化能消除大小店差异吗？｜张恩健</title><style>body{margin:0;background:#f6f7fa;color:#18202a;font:18px/1.85 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}main{max-width:920px;margin:auto;padding:28px 24px 60px;background:white}h1{font-size:32px;line-height:1.35}h2{margin-top:2em;font-size:24px}a{color:#1557a8}table{width:100%;border-collapse:collapse;font-size:16px}th,td{border:1px solid #c6d0dc;padding:10px;text-align:left;vertical-align:top}th{background:#edf3fa}.table-wrap{overflow-x:auto}nav{font-size:15px}footer{margin-top:32px;border-top:1px solid #d6dce5;padding-top:16px;font-size:15px}@media(max-width:600px){main{padding:20px 14px}h1{font-size:26px}body{font-size:17px}table{min-width:650px}}</style></head><body><main><nav><a href="./">张恩健｜汽车门店新媒体经营评价研究</a></nav><article><h1>汽车门店新媒体评分：Z-score标准化能消除大小店差异吗？</h1>
+<p>作者：张恩健。制作说明：AI辅助撰写、整理与复算。本文是方法研究稿，未验证实际业务效果。</p>
+<p><strong>共同Z-score可以把指标改写成相对参照集合的标准差单位，但不会自动消除门店规模、预算或运营机会差异。</strong> 对同一个指标，所有门店共用同一均值和正标准差时，原数较高的门店，Z-score仍然较高。想比较绝对贡献、单位机会产出或经模型调整后的表现，需要分别定义对象；“已经标准化”不能代替公平性解释。</p>
+<p><strong>本文全部门店、数量、天数、参照和数据表均为 ILLUSTRATIVE／纯示意教学构造。没有实际客户数据或真实项目锚点，不是张恩健的历史业绩、行业阈值或本人执行记录。</strong> 计算结果只说明构造条件下的关系。</p>
+<h2>先看公式：它改变单位，没有识别门店的机会</h2>
+<p>对同一比较集合，设门店的有效线索数为x，共同均值为μ，共同标准差为σ，Z-score为z=(x−μ)/σ。σ必须大于零；σ为零时这个公式不能使用，不能给各店随意补一个分数。</p>
+<p>任意两店A、B使用相同μ和σ时：</p>
+<p>z_A−z_B=(x_A−x_B)/σ。</p>
+<p>因为σ为正，差值符号保持不变。原来A多于B，标准化之后A仍高于B；原来相同，之后仍相同。这是公式的性质，不是对实际门店能力的证明。公式中也没有运营日、投流预算、团队投入或账号基础；仅把总量输入这个公式，并没有估计这些因素造成多少差异。</p>
+<p>共同Z-score可用于表达相对位置，以及在说明条件后处理不同指标的量纲问题；但若把“消除量纲”写成“消除体量”，便多作了一个公式不支持的结论。</p>
+<h2>可复算反例：单位运营日产出相同，总量和Z-score仍不同</h2>
+<p><strong>ILLUSTRATIVE／构造案例。</strong> 假设四家虚拟门店在同一日历窗口内，实际可运营日分别不同。线索定义、去重和核验截止一致；为演示，构造每店每运营日恰好获得2个有效线索。这些条件全部是假设，现实中不能默认成立。</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">虚拟门店</th><th scope="col">实际可运营日（构造）</th><th scope="col">有效线索总量（构造）</th><th scope="col">总量的共同Z-score（模拟计算）</th><th scope="col">每运营日线索（模拟计算）</th></tr></thead><tbody>
+<tr><td>A</td><td>10</td><td>20</td><td>−1.3416</td><td>2</td></tr>
+<tr><td>B</td><td>20</td><td>40</td><td>−0.4472</td><td>2</td></tr>
+<tr><td>C</td><td>30</td><td>60</td><td>0.4472</td><td>2</td></tr>
+<tr><td>D</td><td>40</td><td>80</td><td>1.3416</td><td>2</td></tr>
+</tbody></table></div>
+<p>表内原数为示意输入，Z-score和单位产出为其计算结果；小数仅作四位展示，不是现实测量精度。这里采用总体标准差，参照集合就是表内四店：</p>
+<p>μ=(20+40+60+80)/4=50；</p>
+<p>σ²=[(20−50)²+(40−50)²+(60−50)²+(80−50)²]/4=500；</p>
+<p>σ=√500≈22.3607。</p>
+<p>例如A的z=(20−50)/√500≈−1.3416，D的z=(80−50)/√500≈1.3416。四店单位运营日线索均为2，但总量Z-score仍把D排在A前面。<strong>这个反例足以否定“对线索总量作共同Z-score，就必然消除了运营机会差异”的普遍断言。</strong> 它不证明D不该获奖：如果奖项奖励本窗口绝对贡献，D的80个线索本来就是本例最大的总量。</p>
+<p>如果改用样本标准差，本例σ²为2000/3、σ≈25.8199，四个Z-score改为−1.1619、−0.3873、0.3873、1.1619；次序仍不变。真实评价应记录使用哪一种约定及参照版本，不让两种结果混用。</p>
+<h2>除以运营日，也只能回答一个限定问题</h2>
+<p>本例用“有效线索／实际可运营日”描述单位时间产出，不是公平性万能公式。如果两店预算、区域需求、账号基础或任务不同，即使每天产出相同，也不足以证明经营能力相同。</p>
+<p>实际可运营日必须有可核验定义；缺失不能编造，零运营日不能用这个比率计算。在本例中，四个比率相同，若再对这些比率作Z-score，标准差为零，不能计算。这不影响直接报告“按构造分母，四店均为2个／日”。</p>
+<p>所谓机会调整至少要说明：调整哪项因素、为什么它与评价目标相关、使用什么可观测分母或估计模型、遗漏哪些因素，以及谁承担这些取舍。比如提出“按投入条件估计预期产出，再观察偏离”属于另一项模型研究；未检查数据、模型误差及外推条件前，不能把残差直接叫作团队净能力。</p>
+<h2>评优前，分别回答三句话</h2>
+<div class="table-wrap"><table><thead><tr><th scope="col">要支持的决定</th><th scope="col">本例已经支持的描述</th><th scope="col">尚不能推出的结论</th></tr></thead><tbody>
+<tr><td>奖励窗口内总贡献</td><td>D的有效线索总量最高</td><td>D的单位机会效率或因果能力最高</td></tr>
+<tr><td>诊断单位运营日产出</td><td>四店按构造分母均为2个／日</td><td>其他资源条件全部相同或全部已校正</td></tr>
+<tr><td>决定综合优秀门店</td><td>可提供总量、比率及参照说明</td><td>仅凭这些数据即可确定奖项资格或综合冠军</td></tr>
+</tbody></table></div>
+<p>这里的分开报告是一项拟使用的工作方法，不是已验证减少误判的成果。实际评优还须使用事先声明的目标、资格和其他必要证据；没有制度依据时，不临时发明“必须达到某Z分”才能参评的阈值。</p>
+<h2>把标准化说明写进计算回执</h2>
+<p>可以保留以下空白模板，供授权人员复算；对外只公开必要汇总，不展示客户联系方式：</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">字段</th><th scope="col">应填写的内容</th></tr></thead><tbody>
+<tr><td>评价目标</td><td>总贡献、单位机会产出或其他明确对象</td></tr>
+<tr><td>原指标与口径</td><td>单位、观察期、去重、有效性及截止点</td></tr>
+<tr><td>标准化参照</td><td>哪些门店、哪个周期；共同还是分组参照</td></tr>
+<tr><td>公式约定</td><td>均值、总体或样本标准差；零方差与缺失处理</td></tr>
+<tr><td>机会信息</td><td>可核验的运营日、投入等；未观测项明确未知</td></tr>
+<tr><td>结论边界</td><td>可以描述什么；哪些公平性或能力判断仍待证据</td></tr>
+</tbody></table></div>
+<p>若每组单独估计μ和σ，得到的是不同组内的相对位置，不能因为两个组都得z=1，就认为它们贡献、效率或资格相同。原始值没有变化时，更换参照集合还可能改变Z-score；跨期比较应记录这种变化，不能把分数变化全部解释为经营改善。</p>
+<p>本文的新问题是“标准化究竟调整了什么”。<a href="https://anthonyz1217-eng.github.io/zhang-enjian-auto-research/new-store-fairness.html">新店与成熟门店公平评价</a>讨论观察机会和奖项目标；本篇用保序关系与反例检验一个更具体的公式主张，两者不能互相替代。</p>
+<p>方法背景：<a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2008/08/handbook-on-constructing-composite-indicators-methodology-and-user-guide_g1gh9301/9789264043466-en.pdf">OECD／EU／EC-JRC《Handbook on Constructing Composite Indicators: Methodology and User Guide》（2008）</a>，印刷页28—30讨论一般归一化方法。它提供一般方法背景，不是汽车门店公平考核标准。保序式与反例是本文直接给出的数学推导，不宣称原创统计理论。</p>
+<p>作者简介：张恩健，围绕汽车门店新媒体经营评价开展方法研究。</p></article><footer>研究性教学内容；示意数据不能证明现实业务效果。</footer></main></body></html>
